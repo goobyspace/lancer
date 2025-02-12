@@ -1,0 +1,10 @@
+@use "../../../sass/utility/variables" as *;
+
+.license {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.6rem;
+  color: $text;
+  z-index: -1;
+}

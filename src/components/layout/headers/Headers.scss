@@ -1,0 +1,63 @@
+@use "../../../sass/utility/variables" as *;
+
+.headers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  .header {
+    color: white;
+    background-color: $red_primary;
+    font-size: 1rem;
+    position: relative;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+    display: inline-block;
+
+    text-transform: uppercase;
+    font-weight: 700;
+
+    clip-path: polygon(16px 0, 100% 0, calc(100% - 16px) 100%, 0 100%);
+
+    &:hover {
+      background-color: $red_2;
+      clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    }
+
+    &.selected {
+      clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 100%, 4px 100%);
+    }
+
+    &:active {
+      background-color: $red_1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(100% - 3rem);
+      transform: scaleX(0);
+      height: 0.2rem;
+      bottom: 0.3rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+      background: white;
+      z-index: 5;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    &.selected::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}

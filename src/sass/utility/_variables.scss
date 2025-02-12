@@ -1,0 +1,39 @@
+$text: #231f20;
+$background: #f4f4f4;
+
+$red_primary: #c22026;
+$red_0: #f9e9e9;
+$red_1: #e49da0;
+$red_2: #e1484c;
+$red_3: #900002;
+$red_4: #720003;
+$red_5: #450304;
+$red_6: #350001;
+$red_transparent: rgba(249, 233, 233, 0.5);
+
+$teal_primary: #0b7675;
+
+$orange_primary: #ad4525;
+
+$topright_corner_header: polygon(
+  0 0,
+  calc(100% - 0.75rem) 0,
+  100% 0.75rem,
+  100% 100%,
+  0 100%
+);
+
+$topright_corner_header_border: polygon(
+  0 0,
+  calc(100% - 0.8rem) 0,
+  100% 0.8rem,
+  100% 100%,
+  0 100%,
+  0 0,
+  0.2rem 0.2rem,
+  0.2rem calc(100% - 0.2rem),
+  calc(100% - 0.2rem) calc(100% - 0.2rem),
+  calc(100% - 0.2rem) calc(0.8rem + 0.08rem),
+  calc(100% - 0.8rem - 0.08rem) 0.2rem,
+  0.2rem 0.2rem
+);

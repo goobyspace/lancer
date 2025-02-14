@@ -9,10 +9,16 @@ import { headers } from "./components/layout/headers";
 function App() {
   const [page, setPage] = useState(headers[0]);
   const [cookies, setCookies] = useState<Cookies>();
+  const [search, setSearch] = useState("");
 
   const setHeader = (header: string) => {
     setPage(header);
     cookies?.set("header", header, { path: "/" });
+  };
+
+  const onSearch = (search: string) => {
+    setSearch(search);
+    setPage("search");
   };
 
   useEffect(() => {
@@ -29,12 +35,17 @@ function App() {
   return (
     <>
       <div className="page">
-        <Header headers={headers} setHeader={setHeader} selected={page} />
+        <Header
+          headers={headers}
+          setHeader={setHeader}
+          selected={page}
+          setSearch={onSearch}
+        />
         <div className="content">
-          <Body page={page} />
+          <Body page={page} search={search} />
+          <License />
         </div>
       </div>
-      <License />
     </>
   );
 }

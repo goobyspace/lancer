@@ -1,0 +1,75 @@
+@use "../../../../sass/utility/variables" as *;
+
+.turns {
+  font-weight: 600;
+
+  p {
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+  }
+  .turns-turn-options {
+    display: flex;
+    p {
+      font-weight: 700;
+      font-size: 1.5rem;
+      width: 1rem; // equalize width so they grow no matter the flex size
+      color: white;
+      padding: 0.25rem 1.2rem 0.25rem 0.25rem;
+      flex-grow: 1;
+      text-transform: uppercase;
+
+      clip-path: $topright_corner_header;
+
+      &.enemy {
+        background-color: $red_primary;
+      }
+
+      &.player {
+        background-color: $green_primary;
+      }
+
+      &.text {
+        text-transform: uppercase;
+        clip-path: none;
+        background-color: none;
+        color: $text;
+        font-size: 1rem;
+        margin-top: 0.25rem;
+      }
+    }
+
+    span {
+      margin: 0.8rem 0.25rem;
+      color: $red_primary;
+    }
+
+    .arrows {
+      background: $red_primary;
+      position: relative;
+      width: 0.3rem;
+      margin: 0 0.7rem 0 0;
+
+      &.end {
+        height: 1rem;
+      }
+
+      &.middle {
+        height: 2.5rem;
+      }
+    }
+    .arrows:after {
+      background: $red_primary;
+      content: "";
+      height: 0.3rem;
+      border-radius: 0 0 0 8px;
+      left: 0;
+      position: absolute;
+      top: 1rem;
+      width: 0.8rem;
+    }
+
+    .arrows-margin {
+      width: 1rem;
+    }
+  }
+}

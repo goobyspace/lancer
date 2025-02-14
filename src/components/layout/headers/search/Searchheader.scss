@@ -1,0 +1,40 @@
+@use "../../../../sass/utility/variables" as *;
+
+.search-header {
+  display: flex;
+  justify-content: center;
+  .header.search {
+    padding-right: 3rem;
+    padding-left: 1rem;
+    width: 10.5rem;
+    display: inline-block;
+  }
+
+  .search-button {
+    margin-left: -2.9rem;
+    z-index: 2;
+    padding: 0rem 0.7rem;
+    background: transparent;
+
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    clip-path: polygon(16px 0, 100% 0, calc(100% - 16px) 100%, 0 100%);
+
+    &:hover {
+      background: $red_3;
+    }
+
+    &:focus {
+      background: $red_3;
+    }
+  }
+
+  .search:focus + .search-button {
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  }
+
+  .search.selected + .search-button {
+    clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 100%, 4px 100%);
+  }
+}

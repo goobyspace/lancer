@@ -1,36 +1,9 @@
 @use "../../../../sass/utility/variables" as *;
 
 .turn-actions {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  font-weight: 600;
-
-  background-color: $red_transparent;
-  clip-path: polygon(
-    0 0,
-    calc(100% - 0.75rem) 0,
-    100% 0.75rem,
-    100% 100%,
-    0 100%
-  );
-
-  .turn-actions-title {
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    color: white;
-
-    background-color: $red_primary;
-    clip-path: $topright_corner_header;
-  }
-
   .turn-action {
-    display: flex;
-    flex-direction: column;
-    padding: 0rem 0.5rem 0.5rem 0.5rem;
+    font-weight: 600;
+
     p {
       margin-bottom: 0.25rem;
     }
@@ -41,7 +14,7 @@
         font-size: 1.5rem;
         width: 1rem; // equalize width so they grow no matter the flex size
         color: white;
-        background-color: $orange_primary;
+        background-color: $brown_primary;
         padding: 0.25rem 1.2rem 0.25rem 0.25rem;
         flex-grow: 1;
 
@@ -54,6 +27,14 @@
         }
 
         &.full {
+          background-color: $teal_primary;
+        }
+
+        &.free {
+          background-color: $text;
+        }
+
+        &.reaction {
           background-color: $teal_primary;
         }
 
@@ -85,11 +66,11 @@
         margin: 0 0.7rem 0 0;
 
         &.end {
-          height: calc(50% - 0.25rem);
+          height: 1rem;
         }
 
         &.middle {
-          height: 100%;
+          height: 2.5rem;
         }
       }
       .arrows:after {

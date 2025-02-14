@@ -1,0 +1,123 @@
+@use "../../../../sass/utility/variables" as *;
+
+.otheraction {
+  .otheraction-filter {
+    display: flex;
+    gap: 1rem;
+
+    .otheraction-button {
+      font-weight: 700;
+      font-size: 1rem;
+      position: relative;
+
+      border: none;
+      color: white;
+      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+      width: 100%;
+
+      cursor: pointer;
+
+      transition: 0.3s ease-in-out;
+
+      clip-path: $topright_corner_header;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        clip-path: $topright_corner_header_border;
+      }
+    }
+  }
+
+  .otheraction-body {
+    .otheraction-action:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+    .otheraction-action {
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 1fr;
+      transition: 250ms ease;
+
+      div {
+        overflow: hidden;
+      }
+    }
+  }
+
+  &.full {
+    .otheraction-filter {
+      .otheraction-button {
+        &.button-full {
+          background-color: $teal_primary;
+
+          &::before {
+            background: $teal_primary;
+          }
+        }
+      }
+    }
+  }
+
+  &:not(.full) {
+    .otheraction-filter {
+      .otheraction-button {
+        &.button-full {
+          background-color: transparent;
+          color: $teal_primary;
+
+          &::before {
+            background: $teal_primary;
+          }
+        }
+      }
+    }
+
+    div.full:not(.quick) {
+      grid-template-rows: 0fr;
+      margin: 0;
+    }
+
+    &:not(.quick) {
+      div.quick.full {
+        grid-template-rows: 0fr;
+        margin: 0;
+      }
+    }
+  }
+
+  &.quick {
+    .otheraction-filter {
+      .otheraction-button {
+        &.button-quick {
+          background-color: $brown_primary;
+
+          &::before {
+            background: $brown_primary;
+          }
+        }
+      }
+    }
+  }
+
+  &:not(.quick) {
+    .otheraction-filter {
+      .otheraction-button {
+        &.button-quick {
+          background-color: transparent;
+          color: $brown_primary;
+
+          &::before {
+            background: $brown_primary;
+          }
+        }
+      }
+    }
+
+    div.quick:not(.full) {
+      grid-template-rows: 0fr;
+      margin: 0;
+    }
+  }
+}

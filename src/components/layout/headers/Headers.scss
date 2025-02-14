@@ -14,7 +14,7 @@
     border: none;
     padding: 0.5rem 1.5rem;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
     display: inline-block;
 
     text-transform: uppercase;
@@ -25,6 +25,12 @@
     &:hover {
       background-color: $red_2;
       clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    }
+
+    &:focus {
+      background-color: $red_2;
+      clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+      outline: none;
     }
 
     &.selected {

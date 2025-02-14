@@ -1,0 +1,136 @@
+@use "../../../sass/utility/variables" as *;
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .section-header {
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    position: relative;
+    color: white;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    clip-path: $topright_corner_header;
+
+    transition: 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      clip-path: $topright_corner_header_border;
+    }
+  }
+
+  .section-body {
+    padding: 0.5rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: 250ms ease;
+
+    .section-div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    ul {
+      list-style-position: none;
+      li:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &.closed .section-header {
+    background-color: transparent;
+  }
+
+  &.closed .section-body {
+    grid-template-rows: 0fr;
+    padding: 0;
+  }
+
+  .section-div {
+    overflow: hidden;
+  }
+}
+
+.section-red {
+  .section-header {
+    background-color: $red_primary;
+    &::before {
+      background-color: $red_primary;
+    }
+  }
+
+  .section-body {
+    background-color: $red_transparent;
+  }
+
+  &.closed .section-header {
+    color: $red_primary;
+  }
+}
+
+.section-black {
+  .section-header {
+    background-color: $text;
+
+    &::before {
+      background-color: $text;
+    }
+  }
+
+  .section-body {
+    background-color: $background_transparent;
+  }
+
+  &.closed .section-header {
+    color: $text;
+  }
+}
+
+.section-teal {
+  .section-header {
+    background-color: $teal_primary;
+    &::before {
+      background-color: $teal_primary;
+    }
+  }
+
+  .section-body {
+    background-color: $teal_transparent;
+  }
+
+  &.closed .section-header {
+    color: $teal_primary;
+  }
+}
+
+.section-brown {
+  .section-header {
+    background-color: $brown_primary;
+    &::before {
+      background-color: $brown_primary;
+    }
+  }
+
+  .section-body {
+    background-color: $brown_transparent;
+  }
+
+  &.closed .section-header {
+    color: $brown_primary;
+  }
+}

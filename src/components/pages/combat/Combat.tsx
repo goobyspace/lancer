@@ -1,15 +1,28 @@
 import TurnActions from "./turnactions/Turnactions";
 import Movement from "./movement/Movement";
+import Fullaction from "./fullaction/Fullaction";
+import Quickaction from "./quickaction/Quickaction";
+import Otheraction from "./otheraction/Otheraction";
+import Reactions from "./reactions/Reactions";
+import Heat from "./heat/Heat";
+import Turns from "./turns/Turns";
+import "./Combat.scss";
 
 function Combat() {
-  // just make two divs of flex columns instead so that we can get actual odd sizes
-  // maybe do it programatically in the body tag?
   return (
     <>
-      <TurnActions />
-      <Movement />
-      <p>asdf</p>
-      <p>Heyyy</p>
+      <div className="column">
+        <TurnActions />
+        <Fullaction />
+        <Quickaction />
+        <Otheraction />
+      </div>
+      <div className="column">
+        <Movement />
+        <Reactions />
+        <Heat />
+        <Turns />
+      </div>
     </>
   );
 }

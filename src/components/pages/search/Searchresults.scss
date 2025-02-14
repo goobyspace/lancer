@@ -1,0 +1,17 @@
+.body {
+  width: 100%;
+}
+
+.search-results {
+  text-align: center;
+  flex-grow: 1;
+
+  .results {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,20 @@
+@use "../../../../sass/utility/variables" as *;
+
+.heat {
+  .overcharge {
+    color: $red_primary;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 14rem;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      clip-path: $topright_corner_header_border;
+      background: $red_primary;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import License from "./components/layout/license/License";
 import Cookies from "universal-cookie";
 import Body from "./components/layout/body/Body";
 import { headers } from "./components/layout/headers";
+import compass from "./assets/compass.svg";
 
 function App() {
   const [page, setPage] = useState(headers[0]);
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <>
+      <img src={compass} className="compass" />
       <div className="page">
         <Header
           headers={headers}

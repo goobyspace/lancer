@@ -1,10 +1,14 @@
 $text: #231f20;
+$text_filter: brightness(0) saturate(100%) invert(11%) sepia(14%) saturate(287%)
+  hue-rotate(295deg) brightness(96%) contrast(95%);
 $background: #f4f4f4;
 $background_transparent: rgba(244, 244, 244, 0.5);
 
 $hex: #e0e3e6;
 
 $red_primary: #c22026;
+$red_primary_filter: brightness(0) saturate(100%) invert(12%) sepia(100%)
+  saturate(2755%) hue-rotate(345deg) brightness(124%) contrast(94%);
 $red_0: #f9e9e9;
 $red_1: #e49da0;
 $red_2: #e1484c;
@@ -15,14 +19,20 @@ $red_6: #350001;
 $red_transparent: rgba(249, 233, 233, 0.5);
 
 $teal_primary: #0b7675;
+$teal_primary_filter: brightness(0) saturate(100%) invert(32%) sepia(63%)
+  saturate(571%) hue-rotate(131deg) brightness(101%) contrast(95%);
 $teal_1: #e7f1f1;
 $teal_transparent: rgba(231, 241, 241, 0.5);
 
 $brown_primary: #ad4525;
+$brown_filter: brightness(0) saturate(100%) invert(27%) sepia(21%)
+  saturate(5419%) hue-rotate(351deg) brightness(95%) contrast(81%);
 $brown_1: #f5e9e6;
 $brown_transparent: rgba(245, 233, 230, 0.5);
 
 $green_primary: #68bd45;
+$green_filter: brightness(0) saturate(100%) invert(75%) sepia(14%)
+  saturate(1784%) hue-rotate(56deg) brightness(85%) contrast(89%);
 $green_1: #e1f2da;
 $green_transparent: rgba(225, 242, 218, 0.5);
 

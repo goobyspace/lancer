@@ -11,11 +11,12 @@ html {
   padding: 0;
 }
 
-#root {
-  background: url("compass.svg") center center no-repeat;
-  background-size: 30rem;
-  background-attachment: fixed;
-  min-height: 100vh;
+.compass {
+  height: 100vh;
+  width: 40rem;
+  left: calc(50% - 20rem);
+  position: fixed;
+  z-index: -1;
 }
 
 .page {

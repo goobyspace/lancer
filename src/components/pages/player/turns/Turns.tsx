@@ -1,5 +1,6 @@
 import Section from "@/components/layout/section/Section";
 import "./Turns.scss";
+import { Categories } from "lancer-keyword";
 
 function Turns() {
   return (
@@ -41,7 +42,10 @@ function Turns() {
         </div>
       </div>
       <div className="turns-turn">
-        <p>NEXT ROUND: OPPOSITE SIDE OF LAST [k]TURN STARTS</p>
+        <p>
+          NEXT ROUND: OPPOSITE SIDE OF LAST{" "}
+          <lancer-keyword keyword={Categories.combat.keywords.turn} /> STARTS
+        </p>
         <div className="turns-turn-options">
           <div className="arrows-margin" />
           <p className="enemy">ENEMY</p>

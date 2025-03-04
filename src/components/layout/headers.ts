@@ -1,1 +1,1 @@
-export const headers = ["combat", "pilot", "mech", "setting"];
+export const headers = ["player", "dm"];

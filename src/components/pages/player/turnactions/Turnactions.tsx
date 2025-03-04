@@ -8,43 +8,43 @@ function TurnActions() {
         <p>GET 1:</p>
         <div className="turn-action-options">
           <div className="arrows end" />
-          <p className="move">[K]MOVE</p>
+          <p className="move">MOVE</p>
         </div>
       </div>
       <div className="turn-action">
         <p>CHOOSE 1:</p>
         <div className="turn-action-options">
           <div className="arrows middle" />
-          <p className="full">[k]FULL</p>
+          <p className="full">FULL</p>
         </div>
         <div className="turn-action-options">
           <div className="arrows end" />
-          <p>[k]QUICK</p>
+          <p>QUICK</p>
           <span>+</span>
-          <p>[k]QUICK</p>
+          <p>QUICK</p>
         </div>
       </div>
       <div className="turn-action">
-        <p>ONCE PER TURN, [k]OVERCHARGE FOR:</p>
+        <p>ONCE PER TURN, OVERCHARGE FOR:</p>
         <div className="turn-action-options">
           <div className="arrows-margin" />
-          <p>[k]QUICK</p>
+          <p>QUICK</p>
           <span>+</span>
-          <p className="heat">[k]HEAT</p>
+          <p className="heat">HEAT</p>
         </div>
       </div>
       <div className="turn-action">
         <p>EXTRA:</p>
         <div className="turn-action-options">
           <div className="arrows end" />
-          <p className="free">[k]FREE</p>
+          <p className="free">FREE</p>
         </div>
       </div>
       <div className="turn-action">
         <p>ONCE FOR EACH TURN IN THE ROUND:</p>
         <div className="turn-action-options">
           <div className="arrows end" />
-          <p className="reaction">[k]REACTION</p>
+          <p className="reaction">REACTION</p>
         </div>
       </div>
     </Section>

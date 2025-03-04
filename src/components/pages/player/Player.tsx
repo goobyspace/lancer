@@ -1,25 +1,23 @@
 import TurnActions from "./turnactions/Turnactions";
 import Movement from "./movement/Movement";
-import Fullaction from "./fullaction/Fullaction";
-import Quickaction from "./quickaction/Quickaction";
-import Otheraction from "./otheraction/Otheraction";
+import Actions from "./actions/Actions";
 import Reactions from "./reactions/Reactions";
 import Heat from "./heat/Heat";
 import Turns from "./turns/Turns";
-import "./Combat.scss";
+import Range from "./range/Range";
+import "./Player.scss";
 
-function Combat() {
+function Player() {
   return (
     <>
       <div className="column">
         <TurnActions />
-        <Fullaction />
-        <Quickaction />
-        <Otheraction />
+        <Actions />
+        <Reactions />
       </div>
       <div className="column">
         <Movement />
-        <Reactions />
+        <Range />
         <Heat />
         <Turns />
       </div>
@@ -27,4 +25,4 @@ function Combat() {
   );
 }
 
-export default Combat;
+export default Player;

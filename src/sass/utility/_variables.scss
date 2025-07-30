@@ -36,6 +36,8 @@ $green_filter: brightness(0) saturate(100%) invert(75%) sepia(14%)
 $green_1: #e1f2da;
 $green_transparent: rgba(225, 242, 218, 0.5);
 
+$yellow_primary: #f5ebd0;
+
 $topright_corner_header: polygon(
   0 0,
   calc(100% - 0.75rem) 0,

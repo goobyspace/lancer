@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
     "lancer-keyword": "^1.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

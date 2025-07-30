@@ -3,6 +3,7 @@ declare module "react/jsx-runtime" {
     interface IntrinsicElements extends React.JSX.IntrinsicElements {
       ["lancer-keyword"]: {
         keyword: keyword;
+        children?: React.ReactNode;
       };
     }
   }

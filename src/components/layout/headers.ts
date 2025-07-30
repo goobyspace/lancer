@@ -1,1 +1,1 @@
-export const headers = ["player", "dm"];
+export const headers = ["store", "upgrades", "job board", "player"];

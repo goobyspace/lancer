@@ -2,49 +2,7 @@
 
 .store {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
-
-  .store-item {
-    flex: 1 1 calc(50% - 1rem);
-    justify-content: start;
-
-    &.one {
-      .section-body {
-        background-color: $yellow_primary;
-      }
-    }
-
-    &.two {
-      .section-body {
-        background-color: $red_2;
-      }
-    }
-
-    .store-item-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: -0.5rem;
-    }
-
-    .store-item-description {
-      font-size: 0.9rem;
-      font-weight: 500;
-      white-space: pre-wrap;
-    }
-
-    .store-item-flavour {
-      font-size: 0.8rem;
-      font-weight: 500;
-      opacity: 0.8;
-      margin-top: 0.5rem;
-      color: $red_primary;
-      font-style: italic;
-      white-space: pre-wrap;
-    }
-  }
 }

@@ -1,8 +1,8 @@
 import "./store.scss";
-import { parse, addSeconds } from "date-fns";
+import { parse, addSeconds, getWeek } from "date-fns";
 import store from "./store-items";
-import Section from "@/components/layout/section/Section";
 import "./Store.scss";
+import Item from "./item/Item";
 
 /** From: bryc: https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js **/
 function splitmix32(a: number) {
@@ -18,35 +18,38 @@ function splitmix32(a: number) {
 }
 
 function Store() {
-  const arng = parse("Sun 17:00", "EEE HH:mm", new Date()).getTime();
+  const arng = getWeek(parse("Sun", "EEE", new Date()));
 
   const times = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 5; i++) {
     const time = addSeconds(arng, i).getTime();
     times.push(splitmix32(time));
   }
 
   return (
     <div className="store">
+      <p>Resupply Items</p>
+      <Item
+        name="limited charge"
+        price={2000}
+        description="Resupply one charge to any of your mech's limited systems."
+      />
+      <Item
+        name="repair"
+        price={4000}
+        description="Get one extra repair token to spend right now!"
+      />
+      <Item
+        name="core battery"
+        price={8000}
+        description="A core battery to use before the end of the current mission or operation. Regain your used core power upon use."
+      />
+      <p>Rank 1 Reserves</p>
       {times.map((time) => {
         const item = store[Number((49 * time()).toFixed())];
-        return (
-          <Section
-            colour="black"
-            className={`store-item ${item.rank === 1 ? "one" : "two"}`}
-            title={`#${item.id}. ${item.name} ${item.tags
-              .map((tag) => `[${tag}]`)
-              .join(" ")}`}
-          >
-            <div className="store-item-top">
-              <p>{item.price} Manna</p>
-              <p>{item.rank}</p>
-            </div>
-            <p className="store-item-description">{item.description}</p>
-            <p className="store-item-flavour">{item.flavour}</p>
-          </Section>
-        );
+        return <Item {...item} />;
       })}
+      <p>Rank 2 Reserves</p>
     </div>
   );
 }

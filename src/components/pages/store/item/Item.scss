@@ -1,0 +1,94 @@
+@use "../../../../sass/utility/variables" as *;
+
+.store-item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 60%;
+
+  .store-item-details {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: 250ms ease;
+    padding: 0.5rem;
+    background-color: $teal-1;
+
+    &.one {
+      background-color: $yellow-primary;
+    }
+    &.two {
+      background-color: $red-2;
+    }
+
+    .store-item-container {
+      min-height: 0;
+      position: relative;
+
+      .store-item-rank {
+        font-size: 2.5rem;
+        font-weight: 900;
+        position: absolute;
+        right: -0.9rem;
+        top: -1.5rem;
+        opacity: 0.5;
+      }
+
+      .store-item-description {
+        line-break: pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      .store-item-flavour {
+        font-style: italic;
+        color: $red-primary;
+        margin-top: 0.5rem;
+        padding: 0 0.5rem 0.5rem 0.5rem;
+      }
+    }
+  }
+
+  .store-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: $text;
+    color: $background;
+
+    .store-item-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .store-item-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .store-item-price {
+        .manna {
+          position: relative;
+          &::before {
+            content: "";
+            width: 0.95rem;
+            height: 2px;
+            background-color: $background;
+            display: block;
+            position: absolute;
+            top: 44%;
+            left: -0.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.closed {
+    .store-item-details {
+      grid-template-rows: 0fr;
+      padding: 0;
+    }
+  }
+}

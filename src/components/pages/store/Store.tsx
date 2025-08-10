@@ -1,55 +1,63 @@
 import "./store.scss";
-import { parse, addSeconds, getWeek } from "date-fns";
+import { getWeek, getDay, isBefore, parse } from "date-fns";
 import store from "./store-items";
 import "./Store.scss";
 import Item from "./item/Item";
-
-/** From: bryc: https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js **/
-function splitmix32(a: number) {
-  return function () {
-    a |= 0;
-    a = (a + 0x9e3779b9) | 0;
-    let t = a ^ (a >>> 16);
-    t = Math.imul(t, 0x21f0aaad);
-    t = t ^ (t >>> 15);
-    t = Math.imul(t, 0x735a2d97);
-    return ((t = t ^ (t >>> 15)) >>> 0) / 4294967296;
-  };
-}
+import { weeklyRankOneReserves, weeklyRankTwoReserves } from "./item-order";
 
 function Store() {
-  const arng = getWeek(parse("Sun", "EEE", new Date()));
+  const rightNow = new Date();
+  const cutOff = parse("Sun 15:00", "EEE HH:mm", new Date());
+  const week = getWeek(rightNow, {
+    weekStartsOn: 0,
+  });
+  const previousWeek = week === 1 ? 52 : week - 1;
+  const currentWeek =
+    getDay(rightNow) === 0
+      ? isBefore(rightNow, cutOff)
+        ? previousWeek
+        : week
+      : week;
 
-  const times = [];
-  for (let i = 0; i < 5; i++) {
-    const time = addSeconds(arng, i).getTime();
-    times.push(splitmix32(time));
-  }
+  const allRankOneReserves = store.filter((item) => item.rank === 1);
+  const allRankTwoReserves = store.filter((item) => item.rank === 2);
+
+  const rankOneReserves = weeklyRankOneReserves.map(
+    (index) => allRankOneReserves[index[currentWeek]]
+  );
+  const rankTwoReserves = weeklyRankTwoReserves.map(
+    (index) => allRankTwoReserves[index[currentWeek]]
+  );
 
   return (
     <div className="store">
-      <p>Resupply Items</p>
+      <p>Resupply Items ∞</p>
       <Item
         name="limited charge"
         price={2000}
         description="Resupply one charge to any of your mech's limited systems."
+        flavour="Sometimes you just need a little extra juice."
       />
       <Item
         name="repair"
         price={4000}
-        description="Get one extra repair token to spend right now!"
+        description="Get one extra repair capacity that you must spend right now."
+        flavour="A little elbow grease goes a long way. Well, that, and a state of the art mech printing facility and some print credits."
       />
       <Item
         name="core battery"
         price={8000}
         description="A core battery to use before the end of the current mission or operation. Regain your used core power upon use."
+        flavour="WARNING! Volatile substances. Handle with care. If unsure on compatibility, consult your mech's specs. ISP-N is not responsible for any mech damage or bodily injury caused by improper use."
       />
       <p>Rank 1 Reserves</p>
-      {times.map((time) => {
-        const item = store[Number((49 * time()).toFixed())];
+      {rankOneReserves.map((item) => {
         return <Item {...item} />;
       })}
       <p>Rank 2 Reserves</p>
+      {rankTwoReserves.map((item) => {
+        return <Item {...item} />;
+      })}
     </div>
   );
 }

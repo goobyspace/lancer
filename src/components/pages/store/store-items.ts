@@ -248,7 +248,7 @@ export default [
     tags: ["free action", "1/round", "limited 3"],
     price: 1500,
     description:
-      "1/round, When you successfully hit with a melee attack, spend this reserve as a free action to deal 3 knockback, in addition to any other knockback effects. After the attack is resolved, roll 1D6; on a 5, your mech is Impaired until the end of your next turn.",
+      "1/round, When you successfully hit with a melee attack, spend this reserve as a free action to deal 3 knockback, in addition to any other knockback effects. After the attack is resolved, roll 1D6; on a 5+, your mech is Impaired until the end of your next turn.",
     flavour:
       "This handy plug-n-play override lets you get around the factory-standard failsafes native to the original printing.",
     rank: 1,
@@ -585,7 +585,7 @@ export default [
     tags: ["1/round"],
     price: 3000,
     description:
-      "1/round, If you don’t move before firing a Launcher, you get 1 accuracy.",
+      "1/round, If you don’t move before firing a Launcher, you get +1 accuracy.",
     flavour:
       "A software update that improves each missile’s ability to maintain target priority. They just need a second or two to make a lock.",
     rank: 2,
@@ -819,7 +819,7 @@ export default [
     tags: [],
     price: 4500,
     description:
-      "Your sensors get 5 range when you use the Lock On or Scan quick tech actions.",
+      "Your sensors get +5 range when you use the Lock On or Scan quick tech actions.",
     flavour:
       "A software update that boosts your short-range sensors, but only if you keep your finger off the trigger for once in your life.",
     rank: 2,
@@ -1004,7 +1004,7 @@ export default [
     tags: [],
     price: 3500,
     description:
-      "The first Grapple or Ram you make in a round has 1 Accuracy.",
+      "The first Grapple or Ram you make in a round has +1 Accuracy.",
     flavour:
       "A large, oversized gauntlet that fits over one of your mech’s hands. Grants the wearer uncontested dominance in close-quarters sparring.",
     rank: 2,

@@ -1,6 +1,6 @@
 import { createWriteStream } from "fs";
 
-const numbers = Array.from({ length: 50 }, (_, i) => i + 1);
+const numbers = Array.from({ length: 50 }, (_, i) => i);
 const reservesOne = [
   [...numbers, 7, 19, 31],
   [...numbers, 13, 23, 35],

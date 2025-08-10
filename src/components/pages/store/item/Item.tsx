@@ -3,13 +3,14 @@ import dropup from "@/assets/dropup.svg";
 import { useState } from "react";
 import "./Item.scss";
 
-function Store({
+export default function Item({
   name,
   tags,
   description,
   flavour,
   price,
   rank,
+  id,
 }: {
   name: string;
   tags?: string[];
@@ -17,22 +18,27 @@ function Store({
   flavour?: string;
   price: number;
   rank?: number;
+  id: number;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSection = () => {
     setIsOpen(!isOpen);
   };
+
+  if (!name || !description || !price) {
+    return null;
+  }
+
   return (
     <div className={`store-item ${isOpen ? "open" : "closed"}`}>
       <div className="store-item-header" onClick={() => toggleSection()}>
         <h2 className="store-item-title">
-          {name} {tags?.map((tag) => `[${tag}]`).join(" ") || ""}
+          {id}. {name} {tags?.map((tag) => `[${tag}]`).join(" ") || ""}
         </h2>
         <div className="store-item-right">
           <span className="store-item-price">
-            {price.toLocaleString("en", { useGrouping: true })}{" "}
-            <span className="manna">M</span>
+            {price.toString()} <span className="manna">M</span>
           </span>
           <img
             src={isOpen ? dropdown : dropup}
@@ -55,5 +61,3 @@ function Store({
     </div>
   );
 }
-
-export default Store;

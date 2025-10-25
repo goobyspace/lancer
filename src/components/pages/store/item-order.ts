@@ -42,3 +42,4 @@ export const weeklyRankTwoReserves = [
     18, 32, 31, 17, 48, 8, 16, 33, 41, 5, 28, 36, 35, 29,
   ],
 ];
+export const weeklyRankThreeReserves = [[1, 4, 6, 3, 5, 2]];

@@ -1072,4 +1072,76 @@ export default [
       "A big red button that, when pressed, activates your mech’s boosters. Good way to get out of a bad play.",
     rank: 2,
   },
+  {
+    id: 1,
+    name: "BROOD-SIBLING’S MOLT",
+    tags: ["exotic", "main melee"],
+    price: 10000,
+    description:
+      "Main melee. Threat 1. 1D6+1. 1/round, this weapon deals +1d6 bonus damage to characters that are SHREDDED or STUNNED.",
+    flavour: "Goodbye, old [friend/love]",
+    rank: 3,
+  },
+  {
+    id: 2,
+    name: "Fusion Torch",
+    tags: [
+      "exotic",
+      "heavy cqb",
+      "armor-piercing (ap)",
+      "overkill",
+      "inaccurate",
+      "heat 2 (self)",
+    ],
+    price: 10000,
+    description:
+      "Heavy CQB. Line 5. 2d6+2. This weapon automatically deals 30 AP energy damage to objects, cover, and terrain within its area, leaving behind clouds of molten debris in their place that linger until the end of your next turn. Characters other than you that begin their turn in these clouds or who enter them for the first time in a round take 1d6 energy damage. As long as you are at least partially within a cloud, you gain soft cover.",
+    flavour:
+      'The FS-90 "Rockhammer" directed high-output mining beam is a heavy industrial energy cutter used to carve apart starship-grade hulls and toughened asteroids for mineral extraction, channeling a focused beam of superheated energy capable of effortlessly melting through even reinforced bulkheads. Repurposed by IPS-N as an offensive chassis-mounted weapon system, the fusion torch works just as well against enemy armor, and its effectiveness as a breaching tool is second to none. Operators often refer to the glowing slag deposits which frequently adorn their frames as "war paint."',
+    rank: 3,
+  },
+  {
+    id: 3,
+    name: "KINESTHETIC SUIT UPGRADE",
+    tags: ["exotic", "reaction", "system"],
+    price: 10000,
+    description:
+      "For 2 SP: You gain the Spatial Awareness reaction: 1/round, when a character ends a movement adjacent to you, you mast Boost, ignoring reactions and engagement. After doing so, attacks against you receive +1 Difficulty until the end of your next turn.",
+    flavour:
+      "A cybernetic apparatus anchored via spinal tap, the kinesthetic suit upgrade is a full neurological surrogate. Upon installation the apparatus anchors into the spinal cord, lacing machine and biology and allowing the user to relinquish cognitive allotments, related to the maintenance of biological homeostasis. It acts as a twin temporal processor that grants the user the ability to focus excess cognition on a great range of tasks. In recent years SSC has explored the enhancement of kinesthetic awareness, specifically for spaceborne mech pilots.",
+    rank: 3,
+  },
+  {
+    id: 4,
+    name: "MINIATURIZED LINAC COHERENT BEAM CANNON",
+    tags: ["exotic", "unique", "full action"],
+    price: 10000,
+    description:
+      "For 1 SP: Your mech gains an additional Core System that can be used 1/mission. FULL ACTION: LINAC CBC. Line 30. 14 Energy Damage. Activate this devastating charged particle cannon, firing it in a Line 30 path. All sources of cover, terrain, objects, and deployables smaller than Size 5 in this area are boiled away instantly, and then all characters within the area must pass an Agility save or take 14 energy damage. On a success, they take half damage. This damage can’t be reduced in any way. Characters with 7 HP or less, only 1 Structure remaining, and no Immunity to damage are instead instantly and automatically destroyed, annihilated utterly and leaving no wreck behind. You can take no other actions on the same turn you activate this particle cannon except for your standard move or Boost, and the stress of firing it causes you to become Stunned until the start of your next turn.",
+    flavour:
+      "Cressidium’s self-imposed isolation has led to a number of divergent technological advances over the centuries, among them the pursuit of more compact lance weapon development as opposed to further exploration and refinement of naval long-cycle weaponry. Weapons engineers looked to miniaturization, incorporating chemical and exotic-metal batteries and rapid-charge fire-cycling systems suitable for use on smaller and smaller platforms, ultimately including mechanized chassis. This example, reverse-engineered from combat data gathered by Union pilots during an engagement against Vestan Sovereignty special forces, appears to be a descendant of old linear accelerator coherent beam cannon designs – weapons now considered out of date by contemporary naval standards but which are nonetheless exceedingly lethal when employed at this scale.",
+    rank: 3,
+  },
+  {
+    id: 5,
+    name: "REAPER ASSAULT CANNON",
+    tags: ["exotic", "unique", "overkill"],
+    price: 10000,
+    description:
+      "Main Cannon. Range 8. 2D3+1 Kinetic Damage. You may fire this weapon as if it were a superheavy weapon. If you do, it gains Reliable 5 and it deals 4d3+2 Kinetic damage instead of its standard damage.",
+    flavour:
+      "IPS-N’s latest foray into the field of autocannons, the Reaper represents the middle ground between a regular assault cannon and the ubiquitous Leviathan. Capable of laying down a harrowing hail of bullets, the Reaper lacks the typical assault cannon “spin up” feature, relying instead on yet more barrels and two rotary assemblies to achieve a superior rate of fire. Handed out to select IPS-N-licensed printers, this latest model is still in the test stages.",
+    rank: 3,
+  },
+  {
+    id: 6,
+    name: "UPGRADED NETWORK ARRAY",
+    tags: ["exotic", "free action"],
+    price: 10000,
+    description:
+      "1/scene, choose an allied character. Until the end of your next turn, you may use their Systems in place of your own for the purposes of checks and saves, and make tech actions using their Sensors, drawing line of sight from their position.",
+    flavour:
+      "“This is the place? You sure Pettenouk said it was here?” “Yes, I’m sure. By the way, switch over to atmospheric level two. As you know, the air here on Kibo is noxious to us. Without proper adjustments, you’ll enter a coma in hours... Shou! Dammit, someone get Shou, he’s gone and passed out. Pack it up team, we’ll start again tomorrow.” “Bass Harbor, ma’am, I’m catching several bodies approaching our position from the foothills to the northeast.” “Ah, I’m reading it, got you loud and clear. Damn, I love doing these missions for those SSC toads. They always spare no expense and the network arrays are like having God’s eyes. Topside Lighthouse, we got company.”",
+    rank: 3,
+  },
 ];

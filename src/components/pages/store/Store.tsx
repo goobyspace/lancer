@@ -3,7 +3,11 @@ import { getWeek, getDay, isBefore, parse } from "date-fns";
 import store from "./store-items";
 import "./Store.scss";
 import Item from "./item/Item";
-import { weeklyRankOneReserves, weeklyRankTwoReserves } from "./item-order";
+import {
+  weeklyRankOneReserves,
+  weeklyRankTwoReserves,
+  weeklyRankThreeReserves,
+} from "./item-order";
 
 function Store() {
   const rightNow = new Date();
@@ -21,6 +25,7 @@ function Store() {
 
   const allRankOneReserves = store.filter((item) => item.rank === 1);
   const allRankTwoReserves = store.filter((item) => item.rank === 2);
+  const allRankThreeReserves = store.filter((item) => item.rank === 3);
 
   const rankOneReserves = weeklyRankOneReserves
     .map((index) => allRankOneReserves[index[currentWeek]])
@@ -28,6 +33,8 @@ function Store() {
   const rankTwoReserves = weeklyRankTwoReserves
     .map((index) => allRankTwoReserves[index[currentWeek]])
     .sort((a, b) => a.id - b.id);
+  const rankThreeReserve =
+    allRankThreeReserves[weeklyRankThreeReserves[0][currentWeek % 6]];
 
   return (
     <div className="store">
@@ -55,12 +62,14 @@ function Store() {
       />
       <p>Rank 1 Reserves</p>
       {rankOneReserves.map((item) => {
-        return <Item {...item} />;
+        return <Item key={item.name} {...item} />;
       })}
       <p>Rank 2 Reserves</p>
       {rankTwoReserves.map((item) => {
-        return <Item {...item} />;
+        return <Item key={item.name} {...item} />;
       })}
+      <p>Rank 3 Reserve</p>
+      <Item {...rankThreeReserve} />
     </div>
   );
 }

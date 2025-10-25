@@ -1,7 +1,7 @@
 import dropdown from "@/assets/dropdown.svg";
 import dropup from "@/assets/dropup.svg";
-import { useState } from "react";
 import "./Item.scss";
+import * as React from "react";
 
 export default function Item({
   name,
@@ -19,8 +19,9 @@ export default function Item({
   price: number;
   rank?: number;
   id: number;
+  key?: string;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleSection = () => {
     setIsOpen(!isOpen);
